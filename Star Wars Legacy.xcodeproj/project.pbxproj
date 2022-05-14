@@ -14,6 +14,7 @@
 		9F07F24C282F81D200CEF46E /* Star_Wars_LegacyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F07F24B282F81D200CEF46E /* Star_Wars_LegacyTests.swift */; };
 		9F07F256282F81D200CEF46E /* Star_Wars_LegacyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F07F255282F81D200CEF46E /* Star_Wars_LegacyUITests.swift */; };
 		9F07F258282F81D200CEF46E /* Star_Wars_LegacyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F07F257282F81D200CEF46E /* Star_Wars_LegacyUITestsLaunchTests.swift */; };
+		9F07F267282F832F00CEF46E /* ServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F07F266282F832F00CEF46E /* ServiceRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		9F07F251282F81D200CEF46E /* Star Wars LegacyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Star Wars LegacyUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F07F255282F81D200CEF46E /* Star_Wars_LegacyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Star_Wars_LegacyUITests.swift; sourceTree = "<group>"; };
 		9F07F257282F81D200CEF46E /* Star_Wars_LegacyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Star_Wars_LegacyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9F07F266282F832F00CEF46E /* ServiceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +97,8 @@
 			isa = PBXGroup;
 			children = (
 				9F07F23A282F81CF00CEF46E /* Star_Wars_LegacyApp.swift */,
-				9F07F23C282F81CF00CEF46E /* ContentView.swift */,
+				9F07F265282F82A900CEF46E /* Modules */,
+				9F07F264282F82A000CEF46E /* Network */,
 				9F07F23E282F81D200CEF46E /* Assets.xcassets */,
 				9F07F240282F81D200CEF46E /* Preview Content */,
 			);
@@ -125,6 +128,22 @@
 				9F07F257282F81D200CEF46E /* Star_Wars_LegacyUITestsLaunchTests.swift */,
 			);
 			path = "Star Wars LegacyUITests";
+			sourceTree = "<group>";
+		};
+		9F07F264282F82A000CEF46E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				9F07F266282F832F00CEF46E /* ServiceRequest.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		9F07F265282F82A900CEF46E /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				9F07F23C282F81CF00CEF46E /* ContentView.swift */,
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +278,7 @@
 			files = (
 				9F07F23D282F81CF00CEF46E /* ContentView.swift in Sources */,
 				9F07F23B282F81CF00CEF46E /* Star_Wars_LegacyApp.swift in Sources */,
+				9F07F267282F832F00CEF46E /* ServiceRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
