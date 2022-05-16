@@ -8,13 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		9F07F23B282F81CF00CEF46E /* Star_Wars_LegacyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F07F23A282F81CF00CEF46E /* Star_Wars_LegacyApp.swift */; };
-		9F07F23D282F81CF00CEF46E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F07F23C282F81CF00CEF46E /* ContentView.swift */; };
 		9F07F23F282F81D200CEF46E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F07F23E282F81D200CEF46E /* Assets.xcassets */; };
 		9F07F242282F81D200CEF46E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F07F241282F81D200CEF46E /* Preview Assets.xcassets */; };
 		9F07F24C282F81D200CEF46E /* Star_Wars_LegacyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F07F24B282F81D200CEF46E /* Star_Wars_LegacyTests.swift */; };
 		9F07F256282F81D200CEF46E /* Star_Wars_LegacyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F07F255282F81D200CEF46E /* Star_Wars_LegacyUITests.swift */; };
 		9F07F258282F81D200CEF46E /* Star_Wars_LegacyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F07F257282F81D200CEF46E /* Star_Wars_LegacyUITestsLaunchTests.swift */; };
 		9F07F267282F832F00CEF46E /* ServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F07F266282F832F00CEF46E /* ServiceRequest.swift */; };
+		9FB80B542830CE4900D2FEA5 /* StarWarsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB80B532830CE4900D2FEA5 /* StarWarsData.swift */; };
+		9FB80B582832085D00D2FEA5 /* HomeUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB80B572832085D00D2FEA5 /* HomeUI.swift */; };
+		9FB80B5A2832086900D2FEA5 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB80B592832086900D2FEA5 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +39,6 @@
 /* Begin PBXFileReference section */
 		9F07F237282F81CF00CEF46E /* Star Wars Legacy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Star Wars Legacy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F07F23A282F81CF00CEF46E /* Star_Wars_LegacyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Star_Wars_LegacyApp.swift; sourceTree = "<group>"; };
-		9F07F23C282F81CF00CEF46E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9F07F23E282F81D200CEF46E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F07F241282F81D200CEF46E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9F07F247282F81D200CEF46E /* Star Wars LegacyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Star Wars LegacyTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,6 +47,9 @@
 		9F07F255282F81D200CEF46E /* Star_Wars_LegacyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Star_Wars_LegacyUITests.swift; sourceTree = "<group>"; };
 		9F07F257282F81D200CEF46E /* Star_Wars_LegacyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Star_Wars_LegacyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9F07F266282F832F00CEF46E /* ServiceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRequest.swift; sourceTree = "<group>"; };
+		9FB80B532830CE4900D2FEA5 /* StarWarsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsData.swift; sourceTree = "<group>"; };
+		9FB80B572832085D00D2FEA5 /* HomeUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUI.swift; sourceTree = "<group>"; };
+		9FB80B592832086900D2FEA5 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,7 @@
 			children = (
 				9F07F23A282F81CF00CEF46E /* Star_Wars_LegacyApp.swift */,
 				9F07F265282F82A900CEF46E /* Modules */,
+				9FB80B522830CE3500D2FEA5 /* Data */,
 				9F07F264282F82A000CEF46E /* Network */,
 				9F07F23E282F81D200CEF46E /* Assets.xcassets */,
 				9F07F240282F81D200CEF46E /* Preview Content */,
@@ -141,9 +146,34 @@
 		9F07F265282F82A900CEF46E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				9F07F23C282F81CF00CEF46E /* ContentView.swift */,
+				9FB80B562832083900D2FEA5 /* Detail */,
+				9FB80B552832082900D2FEA5 /* Home */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		9FB80B522830CE3500D2FEA5 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				9FB80B532830CE4900D2FEA5 /* StarWarsData.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		9FB80B552832082900D2FEA5 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				9FB80B572832085D00D2FEA5 /* HomeUI.swift */,
+				9FB80B592832086900D2FEA5 /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		9FB80B562832083900D2FEA5 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,8 +306,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F07F23D282F81CF00CEF46E /* ContentView.swift in Sources */,
 				9F07F23B282F81CF00CEF46E /* Star_Wars_LegacyApp.swift in Sources */,
+				9FB80B542830CE4900D2FEA5 /* StarWarsData.swift in Sources */,
+				9FB80B582832085D00D2FEA5 /* HomeUI.swift in Sources */,
+				9FB80B5A2832086900D2FEA5 /* HomeViewModel.swift in Sources */,
 				9F07F267282F832F00CEF46E /* ServiceRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -440,6 +472,7 @@
 				DEVELOPMENT_TEAM = 6A8498PHTR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMainNibFile = HomeUI;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -454,7 +487,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -469,6 +502,7 @@
 				DEVELOPMENT_TEAM = 6A8498PHTR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMainNibFile = HomeUI;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -483,7 +517,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

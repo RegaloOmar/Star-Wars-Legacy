@@ -11,7 +11,7 @@ import SwiftUI
 struct Star_Wars_LegacyApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeUI()
         }
     }
 }
