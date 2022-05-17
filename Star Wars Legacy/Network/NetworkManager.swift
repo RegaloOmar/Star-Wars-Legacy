@@ -7,7 +7,7 @@
 
 import Foundation
 
-class ServiceRequest {
+class NetworkManager {
     
     func fetchPeople(completionHandler: @escaping ([People]) -> Void) {
         

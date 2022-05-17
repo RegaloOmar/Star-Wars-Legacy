@@ -13,7 +13,7 @@
 		9F07F24C282F81D200CEF46E /* Star_Wars_LegacyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F07F24B282F81D200CEF46E /* Star_Wars_LegacyTests.swift */; };
 		9F07F256282F81D200CEF46E /* Star_Wars_LegacyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F07F255282F81D200CEF46E /* Star_Wars_LegacyUITests.swift */; };
 		9F07F258282F81D200CEF46E /* Star_Wars_LegacyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F07F257282F81D200CEF46E /* Star_Wars_LegacyUITestsLaunchTests.swift */; };
-		9F07F267282F832F00CEF46E /* ServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F07F266282F832F00CEF46E /* ServiceRequest.swift */; };
+		9F07F267282F832F00CEF46E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F07F266282F832F00CEF46E /* NetworkManager.swift */; };
 		9FB80B542830CE4900D2FEA5 /* StarWarsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB80B532830CE4900D2FEA5 /* StarWarsData.swift */; };
 		9FB80B582832085D00D2FEA5 /* HomeUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB80B572832085D00D2FEA5 /* HomeUI.swift */; };
 		9FB80B5A2832086900D2FEA5 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB80B592832086900D2FEA5 /* HomeViewModel.swift */; };
@@ -46,7 +46,7 @@
 		9F07F251282F81D200CEF46E /* Star Wars LegacyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Star Wars LegacyUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F07F255282F81D200CEF46E /* Star_Wars_LegacyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Star_Wars_LegacyUITests.swift; sourceTree = "<group>"; };
 		9F07F257282F81D200CEF46E /* Star_Wars_LegacyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Star_Wars_LegacyUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		9F07F266282F832F00CEF46E /* ServiceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRequest.swift; sourceTree = "<group>"; };
+		9F07F266282F832F00CEF46E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		9FB80B532830CE4900D2FEA5 /* StarWarsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsData.swift; sourceTree = "<group>"; };
 		9FB80B572832085D00D2FEA5 /* HomeUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUI.swift; sourceTree = "<group>"; };
 		9FB80B592832086900D2FEA5 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -138,7 +138,7 @@
 		9F07F264282F82A000CEF46E /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				9F07F266282F832F00CEF46E /* ServiceRequest.swift */,
+				9F07F266282F832F00CEF46E /* NetworkManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -310,7 +310,7 @@
 				9FB80B542830CE4900D2FEA5 /* StarWarsData.swift in Sources */,
 				9FB80B582832085D00D2FEA5 /* HomeUI.swift in Sources */,
 				9FB80B5A2832086900D2FEA5 /* HomeViewModel.swift in Sources */,
-				9F07F267282F832F00CEF46E /* ServiceRequest.swift in Sources */,
+				9F07F267282F832F00CEF46E /* NetworkManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

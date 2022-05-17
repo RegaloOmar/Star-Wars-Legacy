@@ -9,4 +9,15 @@ import Foundation
 
 class HomeViewModel {
     
+    private var service = NetworkManager()
+    
+    
+    
+    func fetchPeople() {
+        service.fetchPeople { [weak self] people in
+            
+        }
+    }
+    
+    
 }
