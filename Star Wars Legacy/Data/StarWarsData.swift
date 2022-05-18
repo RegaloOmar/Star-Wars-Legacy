@@ -7,7 +7,14 @@
 
 import Foundation
 
-struct People: Decodable {
+struct GalaxyList: Decodable {
+    let count: Int
+    let next: String?
+    let previous: String?
+    let results: [StarWarsPeople]?
+}
+
+struct StarWarsPeople: Decodable {
     
     let name: String
     let height : String
@@ -16,5 +23,12 @@ struct People: Decodable {
     let skin_color: String
     let eye_color: String
     let birth_year: String
-    
+    let gender: String
+    let homeworld: String
+    let films: [String]
+    let species: [String]?
+    let starship: [String]?
+    let created: Date
+    let edited: Date
+    let url: String
 }

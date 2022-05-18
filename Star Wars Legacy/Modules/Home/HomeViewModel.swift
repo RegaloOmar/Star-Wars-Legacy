@@ -6,16 +6,21 @@
 //
 
 import Foundation
+import Combine
 
-class HomeViewModel {
+class HomeViewModel: ObservableObject {
     
-    private var service = NetworkManager()
+    @Published var starWarsPeople: [StarWarsPeople] = []
     
+    private var networkManager = NetworkManager()
     
+    init() {
+        fetchPeople()
+    }
     
-    func fetchPeople() {
-        service.fetchPeople { [weak self] people in
-            
+    private func fetchPeople() {
+        networkManager.fetchPeople { people in
+            print(people)
         }
     }
     

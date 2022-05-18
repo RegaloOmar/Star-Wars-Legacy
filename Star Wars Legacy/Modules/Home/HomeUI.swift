@@ -8,8 +8,15 @@
 import SwiftUI
 
 struct HomeUI: View {
+    
+    //Connect the View and the ViewModel (Runs init code on the VM)
+    @StateObject private var viewModel = HomeViewModel()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        }
+        
     }
 }
 
