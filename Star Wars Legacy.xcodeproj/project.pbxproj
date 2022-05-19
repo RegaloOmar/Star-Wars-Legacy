@@ -17,6 +17,7 @@
 		9FB80B542830CE4900D2FEA5 /* StarWarsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB80B532830CE4900D2FEA5 /* StarWarsData.swift */; };
 		9FB80B582832085D00D2FEA5 /* HomeUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB80B572832085D00D2FEA5 /* HomeUI.swift */; };
 		9FB80B5A2832086900D2FEA5 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB80B592832086900D2FEA5 /* HomeViewModel.swift */; };
+		E58EE0AE2836CE59004BF803 /* HomeCellUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58EE0AD2836CE59004BF803 /* HomeCellUI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		9FB80B532830CE4900D2FEA5 /* StarWarsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsData.swift; sourceTree = "<group>"; };
 		9FB80B572832085D00D2FEA5 /* HomeUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUI.swift; sourceTree = "<group>"; };
 		9FB80B592832086900D2FEA5 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		E58EE0AD2836CE59004BF803 /* HomeCellUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellUI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 		9FB80B552832082900D2FEA5 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				E58EE0AC2836CE44004BF803 /* Cell */,
 				9FB80B572832085D00D2FEA5 /* HomeUI.swift */,
 				9FB80B592832086900D2FEA5 /* HomeViewModel.swift */,
 			);
@@ -174,6 +177,14 @@
 			children = (
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		E58EE0AC2836CE44004BF803 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				E58EE0AD2836CE59004BF803 /* HomeCellUI.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +321,7 @@
 				9FB80B542830CE4900D2FEA5 /* StarWarsData.swift in Sources */,
 				9FB80B582832085D00D2FEA5 /* HomeUI.swift in Sources */,
 				9FB80B5A2832086900D2FEA5 /* HomeViewModel.swift in Sources */,
+				E58EE0AE2836CE59004BF803 /* HomeCellUI.swift in Sources */,
 				9F07F267282F832F00CEF46E /* NetworkManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

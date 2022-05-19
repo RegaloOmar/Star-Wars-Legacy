@@ -12,6 +12,8 @@ class HomeViewModel: ObservableObject {
     
     @Published var starWarsPeople: [StarWarsPeople] = []
     
+    private var nextPage: String?
+    private var preciousPage: String?
     private var networkManager = NetworkManager()
     
     init() {
@@ -19,8 +21,12 @@ class HomeViewModel: ObservableObject {
     }
     
     private func fetchPeople() {
-        networkManager.fetchPeople { people in
-            print(people)
+        networkManager.fetchPeople { [weak self] people in
+            
+            self?.nextPage = people.next
+            self?.preciousPage = people.previous
+            self?.starWarsPeople = people.results
+            
         }
     }
     
