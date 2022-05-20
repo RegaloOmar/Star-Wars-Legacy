@@ -18,6 +18,7 @@
 		9FB80B582832085D00D2FEA5 /* HomeUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB80B572832085D00D2FEA5 /* HomeUI.swift */; };
 		9FB80B5A2832086900D2FEA5 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB80B592832086900D2FEA5 /* HomeViewModel.swift */; };
 		E58EE0AE2836CE59004BF803 /* HomeCellUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58EE0AD2836CE59004BF803 /* HomeCellUI.swift */; };
+		E58EE0B12837F625004BF803 /* StarWarsStrings.strings in Resources */ = {isa = PBXBuildFile; fileRef = E58EE0B02837F625004BF803 /* StarWarsStrings.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		9FB80B572832085D00D2FEA5 /* HomeUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUI.swift; sourceTree = "<group>"; };
 		9FB80B592832086900D2FEA5 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E58EE0AD2836CE59004BF803 /* HomeCellUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellUI.swift; sourceTree = "<group>"; };
+		E58EE0B02837F625004BF803 /* StarWarsStrings.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = StarWarsStrings.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +108,7 @@
 				9F07F265282F82A900CEF46E /* Modules */,
 				9FB80B522830CE3500D2FEA5 /* Data */,
 				9F07F264282F82A000CEF46E /* Network */,
-				9F07F23E282F81D200CEF46E /* Assets.xcassets */,
+				E58EE0AF2837F5F0004BF803 /* Utils */,
 				9F07F240282F81D200CEF46E /* Preview Content */,
 			);
 			path = "Star Wars Legacy";
@@ -185,6 +187,15 @@
 				E58EE0AD2836CE59004BF803 /* HomeCellUI.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		E58EE0AF2837F5F0004BF803 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9F07F23E282F81D200CEF46E /* Assets.xcassets */,
+				E58EE0B02837F625004BF803 /* StarWarsStrings.strings */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,6 +302,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E58EE0B12837F625004BF803 /* StarWarsStrings.strings in Resources */,
 				9F07F242282F81D200CEF46E /* Preview Assets.xcassets in Resources */,
 				9F07F23F282F81D200CEF46E /* Assets.xcassets in Resources */,
 			);

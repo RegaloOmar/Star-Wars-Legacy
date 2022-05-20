@@ -1,0 +1,16 @@
+/* 
+  StarWarsStrings.strings
+  Star Wars Legacy
+
+  Created by Omar Regalado Mendoza on 20/05/22.
+  
+*/
+
+
+//HomeViewCellUI
+"SW_Characters" = "Characters";
+"SW_Planets" = "Planets";
+"SW_Spaceships" = "Spaceships";
+"SW_Films" = "Films";
+"SW_Species" = "Species";
+"SW_Vehicles" = "Vehicles";

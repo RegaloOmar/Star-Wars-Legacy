@@ -11,6 +11,8 @@ struct HomeUI: View {
     
     let logo = "Star_Wars_Logo"
     let characters = "characters"
+    let subcategories = ["planets", "species", "vehicules", "starship", "films"]
+    
     //Connect the View and the ViewModel (Runs init code on the VM)
     @StateObject private var viewModel = HomeViewModel()
     
@@ -18,34 +20,24 @@ struct HomeUI: View {
         VStack{
             Image(logo)
                 .resizable()
-                .frame(height: 220)
+                .frame(height: 180)
                 .padding(.vertical)
             
-            Image(characters)
-                .frame(width: .infinity)
+            HomeCellUI(image: characters, text: "Characters", isMainCell: true)
+
             
             ScrollView(.horizontal) {
                 LazyHGrid(rows: [GridItem(.flexible())], alignment: .top) {
-                    ForEach((0...222), id: \.self) { _ in
-                        ColorView()
+                    ForEach((0...4), id: \.self) { _ in
+                        HomeCellUI(image: characters, text: characters, isMainCell: false)
                     }
                 }
             }
             .padding()
             
-            
+            Spacer()
         }
-        
     }
-    
-   let colors: [Color] = [.red, .green, .blue, .yellow, .purple]
-    
-   @ViewBuilder
-   func ColorView() -> some View {
-       (colors.randomElement() ?? .gray)
-           .cornerRadius(10)
-           .frame(minHeight: 40)
-   }
 }
 
 struct HomeUI_Previews: PreviewProvider {
