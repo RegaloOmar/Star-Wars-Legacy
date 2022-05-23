@@ -38,7 +38,7 @@ struct HomeCellUI: View {
 
 struct HomeCellUI_Previews: PreviewProvider {
     static var previews: some View {
-        HomeCellUI(image: "characters", text: "Characters")
+        HomeCellUI(image: "Planets", text: "Planets")
             .preferredColorScheme(.dark)
     }
 }

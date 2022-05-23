@@ -10,8 +10,8 @@ import SwiftUI
 struct HomeUI: View {
     
     let logo = "Star_Wars_Logo"
-    let characters = "characters"
-    let subcategories = ["planets", "species", "vehicules", "starship", "films"]
+    let characters = "Characters"
+    let categories = ["Planets", "Species", "Vehicles", "Starships", "Films"]
     
     //Connect the View and the ViewModel (Runs init code on the VM)
     @StateObject private var viewModel = HomeViewModel()
@@ -28,21 +28,25 @@ struct HomeUI: View {
             
             ScrollView(.horizontal) {
                 LazyHGrid(rows: [GridItem(.flexible())], alignment: .top) {
-                    ForEach(subcategories, id: \.self) {
-                        HomeCellUI(image: characters, text: $0, isMainCell: false)
+                    ForEach(categories, id: \.self) {
+                        HomeCellUI(image: $0,
+                                   text: $0,
+                                   isMainCell: false)
+                            .frame(minWidth: 100,maxWidth: 320)
                     }
                 }
             }
             .padding()
             
+            
             Spacer()
         }
+        .preferredColorScheme(.dark)
     }
 }
 
 struct HomeUI_Previews: PreviewProvider {
     static var previews: some View {
         HomeUI()
-            .preferredColorScheme(.dark)
     }
 }
