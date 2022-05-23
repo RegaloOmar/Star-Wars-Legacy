@@ -12,7 +12,12 @@ struct CategoriesUI: View {
     @ObservedObject private var viewModel = CategoriesViewModel()
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView(.vertical) {
+            List( {
+                
+            }
+        }
+        .preferredColorScheme(.dark)
     }
 }
 

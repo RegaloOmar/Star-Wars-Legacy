@@ -23,7 +23,9 @@ struct HomeUI: View {
                 .frame(height: 180)
                 .padding(.vertical)
             
-            HomeCellUI(image: characters, text: "Characters", isMainCell: true)
+            HomeCellUI(image: characters,
+                       text: "Characters",
+                       isMainCell: true)
 
             
             ScrollView(.horizontal) {
