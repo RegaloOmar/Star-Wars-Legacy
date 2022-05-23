@@ -12,6 +12,7 @@ class HomeViewModel: ObservableObject {
     
     @Published var starWarsPeople: [StarWarsPeople] = []
     
+    
     private var nextPage: String?
     private var preciousPage: String?
     private var networkManager = NetworkManager()

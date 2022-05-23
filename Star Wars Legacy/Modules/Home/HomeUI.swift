@@ -28,8 +28,8 @@ struct HomeUI: View {
             
             ScrollView(.horizontal) {
                 LazyHGrid(rows: [GridItem(.flexible())], alignment: .top) {
-                    ForEach((0...4), id: \.self) { _ in
-                        HomeCellUI(image: characters, text: characters, isMainCell: false)
+                    ForEach(subcategories, id: \.self) {
+                        HomeCellUI(image: characters, text: $0, isMainCell: false)
                     }
                 }
             }
