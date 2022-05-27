@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CategoriesViewModel: ObservableObject {
+class CharactersViewModel: ObservableObject {
     
     
     init() {

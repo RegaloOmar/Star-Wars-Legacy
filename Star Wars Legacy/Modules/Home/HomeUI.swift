@@ -22,12 +22,14 @@ struct HomeUI: View {
                 .resizable()
                 .frame(height: 180)
                 .padding(.vertical)
-            
-            HomeCellUI(image: characters,
-                       text: "Characters",
-                       isMainCell: true)
+            Button {
+                
+            } label: {
+                HomeCellUI(image: characters,
+                           text: characters,
+                           isMainCell: true)
+            }
 
-            
             ScrollView(.horizontal) {
                 LazyHGrid(rows: [GridItem(.flexible())], alignment: .top) {
                     ForEach(categories, id: \.self) {

@@ -14,8 +14,9 @@ struct GalaxyList: Decodable {
     var results: [StarWarsPeople]
 }
 
-struct StarWarsPeople: Decodable {
+struct StarWarsPeople: Decodable, Identifiable {
     
+    var id = UUID()
     var name: String
     var height : String
     var mass: String
