@@ -192,8 +192,8 @@
 			isa = PBXGroup;
 			children = (
 				E5D92370283BFE75008E02E4 /* Cell */,
-				E58EE0B528384036004BF803 /* CharactersViewModel.swift */,
 				E538854728403F6B00BED136 /* CharactersUI.swift */,
+				E58EE0B528384036004BF803 /* CharactersViewModel.swift */,
 			);
 			path = Characters;
 			sourceTree = "<group>";

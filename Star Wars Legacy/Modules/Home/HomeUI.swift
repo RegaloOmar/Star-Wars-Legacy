@@ -17,35 +17,36 @@ struct HomeUI: View {
     @StateObject private var viewModel = HomeViewModel()
     
     var body: some View {
-        VStack{
-            Image(logo)
-                .resizable()
-                .frame(height: 180)
-                .padding(.vertical)
-            Button {
+        NavigationView {
+            VStack{
+                Image(logo)
+                    .resizable()
+                    .frame(height: 180)
+                    .padding(.vertical)
                 
-            } label: {
-                HomeCellUI(image: characters,
-                           text: characters,
-                           isMainCell: true)
-            }
+                NavigationLink(destination: CharactersUI()) {
+                    HomeCellUI(image: characters,
+                               text: characters,
+                               isMainCell: true)
+                }
+                
 
-            ScrollView(.horizontal) {
-                LazyHGrid(rows: [GridItem(.flexible())], alignment: .top) {
-                    ForEach(categories, id: \.self) {
-                        HomeCellUI(image: $0,
-                                   text: $0,
-                                   isMainCell: false)
-                            .frame(minWidth: 100,maxWidth: 320)
+                ScrollView(.horizontal) {
+                    LazyHGrid(rows: [GridItem(.flexible())], alignment: .top) {
+                        ForEach(categories, id: \.self) {
+                            HomeCellUI(image: $0,
+                                       text: $0,
+                                       isMainCell: false)
+                                .frame(minWidth: 100,maxWidth: 320)
+                        }
                     }
                 }
+                
+                Spacer()
             }
-            .padding()
-            
-            
-            Spacer()
+            .preferredColorScheme(.dark)
+            .navigationBarHidden(true)
         }
-        .preferredColorScheme(.dark)
     }
 }
 

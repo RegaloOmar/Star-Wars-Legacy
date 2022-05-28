@@ -8,8 +8,18 @@
 import SwiftUI
 
 struct CharactersUI: View {
+    
+    @StateObject private var viewModel = CharactersViewModel()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView(.horizontal) {
+            LazyVGrid(columns: [GridItem(.fixed(150)),
+                                GridItem(.fixed(150))]) {
+                    
+                
+            }
+        }
+        .preferredColorScheme(.dark)
     }
 }
 
