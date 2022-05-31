@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CategoriesCellUI: View {
+struct CharactersCellUI: View {
     
     var imageName: String
     var name: String
@@ -38,7 +38,7 @@ struct CategoriesCellUI: View {
 
 struct CategoriesCellUI_Previews: PreviewProvider {
     static var previews: some View {
-        CategoriesCellUI(imageName: "Characters",
+        CharactersCellUI(imageName: "Characters",
                          name: "Baby Yoda")
     }
 }

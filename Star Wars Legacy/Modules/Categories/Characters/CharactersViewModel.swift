@@ -13,6 +13,7 @@ class CharactersViewModel: ObservableObject {
     var characterList: [StarWarsPeople]?
     var nextPage: String?
     var previousPage: String?
+    private var delegate: CharactersDelegate?
     
     init() {
         fetchCharacters()
@@ -24,6 +25,7 @@ class CharactersViewModel: ObservableObject {
             self.characterList = galaxy.results
             self.nextPage = galaxy.next
             self.previousPage = galaxy.previous
+            self.delegate?.reloadData()
         }
         
     }

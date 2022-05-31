@@ -15,7 +15,13 @@ struct CharactersUI: View {
         ScrollView(.horizontal) {
             LazyVGrid(columns: [GridItem(.fixed(150)),
                                 GridItem(.fixed(150))]) {
+                ForEach(viewModel.characterList ?? [StarWarsPeople](), id:\.self) {
                     
+                    CharactersCellUI(imageName: "Characteres",
+                                     name: $0.name)
+                    
+                    
+                }
                 
             }
         }
