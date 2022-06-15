@@ -9,24 +9,21 @@ import Foundation
 
 class NetworkManager {
     
-    func fetchPeople(_ url: String = "https://swapi.dev/api/people/?page=1", completionHandler: @escaping (GalaxyList) -> Void) {
+    func fetchCharacters(_ url: String = "https://swapi.dev/api/people/?page=1", completionHandler: @escaping (GalaxyList) -> Void) {
         
         let url = URL(string: url)!
         
         URLSession.shared.dataTask(with: url) { data, response, error in
             if error == nil {
-                
-                guard let data = data else { return }
-                
+                guard let data = data, error == nil else { return }
                 do {
                     let peopleJSON = try JSONDecoder().decode(GalaxyList.self, from: data)
                     
                     DispatchQueue.global(qos: .userInteractive).async {
                         completionHandler(peopleJSON)
                     }
-                    
                 } catch {
-                    
+                    print(error.localizedDescription)
                 }
             }
         }.resume()

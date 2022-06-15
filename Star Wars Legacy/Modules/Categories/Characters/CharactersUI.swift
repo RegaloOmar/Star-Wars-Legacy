@@ -9,21 +9,20 @@ import SwiftUI
 
 struct CharactersUI: View {
     
-    @StateObject private var viewModel = CharactersViewModel()
+    @StateObject var viewModel = CharactersViewModel()
     
     var body: some View {
-        ScrollView(.horizontal) {
-            LazyVGrid(columns: [GridItem(.fixed(150)),
-                                GridItem(.fixed(150))]) {
-                ForEach(viewModel.characterList ?? [StarWarsPeople](), id:\.self) {
-                    
-                    CharactersCellUI(imageName: "Characteres",
-                                     name: $0.name)
-                    
-                    
-                }
-                
+        
+        List{
+            ForEach(viewModel.characterList) { character in
+                Text(character.name)
+                    .foregroundColor(.yellow)
+                    .fontWeight(.bold)
+                    .font(.system(.title, design: .rounded))
             }
+        }
+        .onAppear {
+            viewModel.fetchCharacters()
         }
         .preferredColorScheme(.dark)
     }

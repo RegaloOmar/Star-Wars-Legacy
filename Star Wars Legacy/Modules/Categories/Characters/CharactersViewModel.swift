@@ -10,22 +10,20 @@ import Foundation
 class CharactersViewModel: ObservableObject {
     
     private var networkManager = NetworkManager()
-    var characterList: [StarWarsPeople]?
+    @Published var characterList: [StarWarsPeople] = []
     var nextPage: String?
     var previousPage: String?
-    private var delegate: CharactersDelegate?
     
-    init() {
-        fetchCharacters()
-    }
     
-    private func fetchCharacters() {
+    func fetchCharacters() {
         
-        networkManager.fetchPeople { galaxy in
-            self.characterList = galaxy.results
-            self.nextPage = galaxy.next
-            self.previousPage = galaxy.previous
-            self.delegate?.reloadData()
+        networkManager.fetchCharacters { [weak self] galaxy in
+            
+            DispatchQueue.main.async {
+                self?.characterList = galaxy.results
+                self?.nextPage = galaxy.next
+                self?.previousPage = galaxy.previous
+            }
         }
         
     }

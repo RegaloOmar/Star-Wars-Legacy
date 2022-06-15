@@ -12,8 +12,6 @@ struct HomeUI: View {
     let logo = "Star_Wars_Logo"
     let characters = "Characters"
     let categories = ["Planets", "Species", "Vehicles", "Starships", "Films"]
-    
-    //Connect the View and the ViewModel (Runs init code on the VM)
     @StateObject private var viewModel = HomeViewModel()
     
     var body: some View {
@@ -24,13 +22,13 @@ struct HomeUI: View {
                     .frame(height: 180)
                     .padding(.vertical)
                 
-                NavigationLink(destination: CharactersUI()) {
+                NavigationLink(destination: CharactersUI()
+                    .navigationTitle("Characters")){
                     HomeCellUI(image: characters,
                                text: characters,
                                isMainCell: true)
                 }
                 
-
                 ScrollView(.horizontal) {
                     LazyHGrid(rows: [GridItem(.flexible())], alignment: .top) {
                         ForEach(categories, id: \.self) {
