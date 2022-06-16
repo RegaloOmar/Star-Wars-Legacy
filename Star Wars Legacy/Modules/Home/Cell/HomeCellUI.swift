@@ -17,7 +17,7 @@ struct HomeCellUI: View {
         ZStack(alignment: .bottom) {
             Image(self.image)
                 .resizable()
-                .frame(minWidth: CGFloat.zero, maxWidth: .infinity, minHeight: isMainCell ? 200 : 160, maxHeight: isMainCell ? 200 : 160)
+                .frame(minWidth: CGFloat.zero, maxWidth: .infinity, minHeight: isMainCell ? 200 : 160, maxHeight: isMainCell ? 250 : 160)
             
             
             Text(self.text)

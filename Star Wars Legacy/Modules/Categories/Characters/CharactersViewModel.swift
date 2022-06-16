@@ -6,25 +6,35 @@
 //
 
 import Foundation
+import Combine
 
 class CharactersViewModel: ObservableObject {
     
-    private var networkManager = NetworkManager()
+    @Published var isRequestFailed = false
     @Published var characterList: [StarWarsPeople] = []
     var nextPage: String?
     var previousPage: String?
+    private var cancellable: AnyCancellable?
+    
     
     
     func fetchCharacters() {
         
-        networkManager.fetchCharacters { [weak self] galaxy in
-            
-            DispatchQueue.main.async {
-                self?.characterList = galaxy.results
-                self?.nextPage = galaxy.next
-                self?.previousPage = galaxy.previous
-            }
-        }
-        
+        cancellable = NetworkManager.shared.fetchCharacters()
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { [weak self] completion in
+                switch completion {
+                case .failure(let error):
+                    self?.isRequestFailed = true
+                    print(error)
+                case .finished:
+                    print("finished")
+                }
+            }, receiveValue: { [weak self] galaxyList in
+                self?.characterList = galaxyList.results
+                self?.nextPage = galaxyList.next
+                self?.previousPage = galaxyList.previous
+            })
     }
+    
 }

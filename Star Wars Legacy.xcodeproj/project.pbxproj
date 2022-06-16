@@ -17,6 +17,7 @@
 		9FB80B542830CE4900D2FEA5 /* StarWarsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB80B532830CE4900D2FEA5 /* StarWarsData.swift */; };
 		9FB80B582832085D00D2FEA5 /* HomeUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB80B572832085D00D2FEA5 /* HomeUI.swift */; };
 		9FB80B5A2832086900D2FEA5 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB80B592832086900D2FEA5 /* HomeViewModel.swift */; };
+		9FD07DAA285AED7000BE3F05 /* LoaderViewUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD07DA9285AED7000BE3F05 /* LoaderViewUI.swift */; };
 		E538854828403F6B00BED136 /* CharactersUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E538854728403F6B00BED136 /* CharactersUI.swift */; };
 		E58EE0AE2836CE59004BF803 /* HomeCellUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E58EE0AD2836CE59004BF803 /* HomeCellUI.swift */; };
 		E58EE0B12837F625004BF803 /* StarWarsStrings.strings in Resources */ = {isa = PBXBuildFile; fileRef = E58EE0B02837F625004BF803 /* StarWarsStrings.strings */; };
@@ -54,6 +55,7 @@
 		9FB80B532830CE4900D2FEA5 /* StarWarsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsData.swift; sourceTree = "<group>"; };
 		9FB80B572832085D00D2FEA5 /* HomeUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUI.swift; sourceTree = "<group>"; };
 		9FB80B592832086900D2FEA5 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		9FD07DA9285AED7000BE3F05 /* LoaderViewUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderViewUI.swift; sourceTree = "<group>"; };
 		E538854728403F6B00BED136 /* CharactersUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersUI.swift; sourceTree = "<group>"; };
 		E58EE0AD2836CE59004BF803 /* HomeCellUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCellUI.swift; sourceTree = "<group>"; };
 		E58EE0B02837F625004BF803 /* StarWarsStrings.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = StarWarsStrings.strings; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 		9F07F265282F82A900CEF46E /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				9FD07DA8285AED3600BE3F05 /* Helpers */,
 				E58EE0B228383EA7004BF803 /* Categories */,
 				9FB80B562832083900D2FEA5 /* Detail */,
 				9FB80B552832082900D2FEA5 /* Home */,
@@ -184,6 +187,14 @@
 			children = (
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		9FD07DA8285AED3600BE3F05 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9FD07DA9285AED7000BE3F05 /* LoaderViewUI.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		E538854628403E8900BED136 /* Characters */ = {
@@ -357,6 +368,7 @@
 				9FB80B582832085D00D2FEA5 /* HomeUI.swift in Sources */,
 				9FB80B5A2832086900D2FEA5 /* HomeViewModel.swift in Sources */,
 				E58EE0AE2836CE59004BF803 /* HomeCellUI.swift in Sources */,
+				9FD07DAA285AED7000BE3F05 /* LoaderViewUI.swift in Sources */,
 				E538854828403F6B00BED136 /* CharactersUI.swift in Sources */,
 				9F07F267282F832F00CEF46E /* NetworkManager.swift in Sources */,
 			);
