@@ -13,22 +13,26 @@ struct CharactersUI: View {
     
     var body: some View {
         
-        VStack {
+        NavigationView {
             List{
                 ForEach(viewModel.characterList) { character in
-                    Text(character.name)
-                        .foregroundColor(.yellow)
-                        .fontWeight(.bold)
-                        .font(.system(.title, design: .rounded))
-                        .frame(minWidth: 100,
-                               maxWidth: .infinity,
-                               minHeight: 100,
+                    NavigationLink(destination: DetailsUI(character: character)) {
+                        Text(character.name)
+                            .foregroundColor(.yellow)
+                            .fontWeight(.bold)
+                            .font(.system(.title, design: .rounded))
+                            .frame(minWidth: 100,
+                                   maxWidth: .infinity,
+                                   minHeight: 100,
                                maxHeight: 100)
+                    }
                 }
             }
             .onAppear {
                 viewModel.fetchCharacters()
             }
+            
+            .navigationTitle("Characters")
         }
         .preferredColorScheme(.dark)
     }

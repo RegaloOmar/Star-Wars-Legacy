@@ -11,16 +11,15 @@ import Combine
 class CharactersViewModel: ObservableObject {
     
     @Published var isRequestFailed = false
-    @Published var characterList: [StarWarsPeople] = []
+    @Published var characterList: [Character] = []
     var nextPage: String?
     var previousPage: String?
     private var cancellable: AnyCancellable?
     
     
-    
-    func fetchCharacters() {
+    func fetchCharacters(_ url: String = "https://swapi.dev/api/people/?page=1") {
         
-        cancellable = NetworkManager.shared.fetchCharacters()
+        cancellable = NetworkManager.shared.fetchCharacters(url)
             .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { [weak self] completion in
                 switch completion {
