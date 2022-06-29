@@ -12,6 +12,7 @@ struct DetailsUI: View {
     var character: Character
     
     var body: some View {
+        
         NavigationView {
             VStack {
                 Image("Characters")
@@ -24,31 +25,72 @@ struct DetailsUI: View {
                         .frame(width: 200, height: 200))
                 
                 Text(character.name)
-                    .font(.system(.largeTitle, design: .rounded))
-                    .foregroundColor(.yellow)
+                    .font(.largeTitle)
                     .fontWeight(.bold)
-                    .padding()
-                HStack{
-                    Text("Personal Info")
-                        .font(.title)
-                        .foregroundColor(.yellow)
-                        .bold()
-                    Spacer()
-                }
-                .padding(.bottom, 10)
-                .padding(.horizontal)
-                HStack {
+                    .foregroundColor(.yellow)
+                
+                VStack {
+                    HStack {
+                        Text("Personal Info")
+                            .font(.title)
+                            .bold()
+                            .foregroundColor(.yellow)
+                        
+                        Spacer()
+                    }
                     
-                    Text("Height:")
-                        .bold()
-                    Text(character.height)
-                    Spacer()
+                    HStack {
+                        Text("Height:")
+                            .font(.system(.title2))
+                        
+                        Spacer()
+                        
+                        Text(character.height)
+                            .font(.system(.title2))
+                            .bold()
+                    }
+                    
+                    HStack {
+                        Text("Mass:")
+                            .font(.title2)
+                        
+                        Spacer()
+                        
+                        Text(character.mass)
+                            .font(.title2)
+                            .bold()
+                    }
+                    
+                    HStack {
+                        Text("Birth Year:")
+                            .font(.title2)
+                        
+                        Spacer()
+                        
+                        Text(character.birthYear)
+                            .font(.title2)
+                            .bold()
+                    }
+                    
+                    HStack {
+                        Text("Gender:")
+                            .font(.title2)
+                        
+                        Spacer()
+                        
+                        Text(character.gender)
+                            .font(.title2)
+                            .bold()
+                    }
+                   
                 }
-                .padding(.horizontal)
+                .padding()
+                
                 Spacer()
             }
             .preferredColorScheme(.dark)
         }
+        
     }
 }
 
@@ -56,7 +98,7 @@ struct DetailsUI_Previews: PreviewProvider {
     var data: Character
     static var previews: some View {
         DetailsUI(character: Character(
-            name: "Luke Skywalker",
+            name: "Grogu",
             height: "172",
             mass: "77",
             hairColor: "blond",

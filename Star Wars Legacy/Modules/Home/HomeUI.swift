@@ -22,8 +22,7 @@ struct HomeUI: View {
                     .frame(height: 180)
                     .padding(.vertical)
                 
-                NavigationLink(destination: CharactersUI()
-                    .navigationTitle("Characters")){
+                NavigationLink(destination: CharactersUI().navigationTitle("Characters")){
                     HomeCellUI(image: characters,
                                text: characters,
                                isMainCell: true)

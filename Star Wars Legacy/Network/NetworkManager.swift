@@ -26,7 +26,14 @@ class NetworkManager {
             .eraseToAnyPublisher()
     }
     
-    func fetchImages() {
+    
+    func fetchImages(_ id: String) {
+        
+        var baseUrl = "https://starwars-visualguide.com/assets/img/characters/$id.jpg"
+        
+        let components = URLComponents(string: baseUrl.replacingOccurrences(of: "$id", with: id))!
+        
+        let request = URLRequest(url: components.url!)
         
         
         
