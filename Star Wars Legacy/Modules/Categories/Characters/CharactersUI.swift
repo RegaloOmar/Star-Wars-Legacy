@@ -11,16 +11,14 @@ struct CharactersUI: View {
     
     @StateObject private var viewModel = CharactersViewModel()
     @StateObject private var imageLoader = ImageLoader()
-    let url = URL(string: "https://starwars-visualguide.com/assets/img/characters/3.jpg")
     
     var body: some View {
-        
         
         List{
             ForEach(viewModel.characterList) { character in
                 NavigationLink(destination: DetailsUI(character: character)) {
 
-                    AsyncImage(url: imageLoader.getImageURL(character.url)) {
+                    AsyncImage(url: URL(string: imageLoader.getImageURL(character.url))) {
                         $0.resizable()
                             .frame(width: 70, height: 70)
                             .clipShape(Circle())
@@ -43,6 +41,7 @@ struct CharactersUI: View {
             viewModel.fetchCharacters()
         }
         .preferredColorScheme(.dark)
+        
     }
     
     private func fetchData() {

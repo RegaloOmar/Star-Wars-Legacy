@@ -14,84 +14,111 @@ struct DetailsUI: View {
     var body: some View {
         
         NavigationView {
-            VStack {
-                Image("Characters")
-                    .resizable()
-                    .frame(width: 200, height: 200)
-                    .clipShape(Circle())
-                    .overlay(Circle()
-                        .stroke(lineWidth: 5)
-                        .foregroundColor(.yellow)
-                        .frame(width: 200, height: 200))
-                
-                Text(character.name)
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .foregroundColor(.yellow)
-                
+            ScrollView(.vertical) {
                 VStack {
-                    HStack {
-                        Text("Personal Info")
-                            .font(.title)
-                            .bold()
+                    Image("Characters")
+                        .resizable()
+                        .frame(width: 200, height: 200)
+                        .clipShape(Circle())
+                        .overlay(Circle()
+                            .stroke(lineWidth: 5)
                             .foregroundColor(.yellow)
-                        
-                        Spacer()
-                    }
+                            .frame(width: 200, height: 200))
                     
-                    HStack {
-                        Text("Height:")
-                            .font(.system(.title2))
-                        
-                        Spacer()
-                        
-                        Text(character.height)
-                            .font(.system(.title2))
-                            .bold()
-                    }
+                    Text(character.name)
+                        .font(.largeTitle)
+                        .fontWeight(.bold)
+                        .foregroundColor(.yellow)
                     
-                    HStack {
-                        Text("Mass:")
-                            .font(.title2)
+                    VStack {
                         
-                        Spacer()
+                        SectionHeader(text: "Personal Info")
                         
-                        Text(character.mass)
-                            .font(.title2)
-                            .bold()
+                        InfoRows(textLeft: "Height", textRight: character.height)
+                        
+                        InfoRows(textLeft: "Mass", textRight: character.mass)
+                        
+                        InfoRows(textLeft: "BirthYear", textRight: character.birthYear)
+                        
+                        InfoRows(textLeft: "Gender", textRight: character.gender)
+                        
+                        InfoRows(textLeft: "Skin Color", textRight: character.skinColor)
+                        
+                        InfoRows(textLeft: "Eye Color", textRight: character.eyeColor)
+                        
+                        InfoRows(textLeft: "Hair Color", textRight: character.hairColor)
+                       
                     }
+                    .padding()
                     
-                    HStack {
-                        Text("Birth Year:")
-                            .font(.title2)
-                        
-                        Spacer()
-                        
-                        Text(character.birthYear)
-                            .font(.title2)
-                            .bold()
+                    VStack {
+                        SectionHeader(text: "Homeworld")
                     }
+                    .padding()
                     
-                    HStack {
-                        Text("Gender:")
-                            .font(.title2)
-                        
-                        Spacer()
-                        
-                        Text(character.gender)
-                            .font(.title2)
-                            .bold()
+                    VStack {
+                        SectionHeader(text: "Films")
                     }
-                   
+                    .padding()
+                    
+                    VStack {
+                        SectionHeader(text: "Species")
+                    }
+                    .padding()
+                    
+                    VStack {
+                        SectionHeader(text: "Starships")
+                    }
+                    .padding()
+                    
+                    VStack {
+                        SectionHeader(text: "Vehicles")
+                    }
+                    .padding()
+                    
+                    Spacer()
                 }
-                .padding()
-                
-                Spacer()
+                .preferredColorScheme(.dark)
             }
-            .preferredColorScheme(.dark)
         }
-        
     }
+}
+
+struct InfoRows: View {
+    
+    var textLeft: String
+    var textRight: String
+    
+    var body: some View {
+        HStack {
+            Text(textLeft)
+                .font(.title2)
+            
+            Spacer()
+            
+            Text(textRight)
+                .font(.title2)
+                .bold()
+        }
+    }
+    
+}
+
+struct SectionHeader: View {
+    
+    var text: String
+    
+    var body: some View {
+        HStack {
+            Text(text)
+                .font(.title)
+                .bold()
+                .foregroundColor(.yellow)
+            
+            Spacer()
+        }
+    }
+    
 }
 
 struct DetailsUI_Previews: PreviewProvider {

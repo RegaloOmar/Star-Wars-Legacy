@@ -7,36 +7,30 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
 class NetworkManager {
     
     static let shared = NetworkManager()
     
-    let session = URLSession.shared
-    
     func fetchCharacters(_ url: String) -> AnyPublisher<GalaxyList, Error> {
+        return execute(url, dataType: GalaxyList.self)
+    }
+    
+    func fetchImages(_ url: String) -> AnyPublisher<Images, Error> {
+        return execute(url, dataType: Images.self)
+    }
+    
+    private func execute<Element: Decodable>(_ url: String, dataType: Element.Type) -> AnyPublisher<Element, Error> {
         
         let components = URLComponents(string: url)!
         
         let request = URLRequest(url: components.url!)
-         
-        return session.dataTaskPublisher(for: request)
+        
+        return URLSession.shared.dataTaskPublisher(for: request)
             .map(\.data)
-            .decode(type: GalaxyList.self, decoder: JSONDecoder())
+            .decode(type: dataType.self, decoder: JSONDecoder())
             .eraseToAnyPublisher()
-    }
-    
-    
-    func fetchImages(_ id: String) {
-        
-        var baseUrl = "https://starwars-visualguide.com/assets/img/characters/$id.jpg"
-        
-        let components = URLComponents(string: baseUrl.replacingOccurrences(of: "$id", with: id))!
-        
-        let request = URLRequest(url: components.url!)
-        
-        
-        
     }
     
     
