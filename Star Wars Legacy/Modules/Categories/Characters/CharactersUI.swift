@@ -16,6 +16,7 @@ struct CharactersUI: View {
         
         List{
             ForEach(viewModel.characterList) { character in
+                
                 NavigationLink(destination: DetailsUI(character: character)) {
 
                     AsyncImage(url: URL(string: imageLoader.getImageURL(character.url))) {
@@ -42,10 +43,6 @@ struct CharactersUI: View {
         }
         .preferredColorScheme(.dark)
         
-    }
-    
-    private func fetchData() {
-        viewModel.fetchCharacters()
     }
 }
 

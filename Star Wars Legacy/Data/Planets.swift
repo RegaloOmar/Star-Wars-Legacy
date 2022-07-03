@@ -7,8 +7,9 @@
 
 import Foundation
 
-struct Planets {
+struct Planets: Decodable, Identifiable, Hashable {
     
+    var id = UUID()
     var name: String
     var rotationPeriod: String
     var orbitalPeriod: String

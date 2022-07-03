@@ -10,76 +10,82 @@ import SwiftUI
 struct DetailsUI: View {
     
     var character: Character
+    @StateObject private var imageLoader = ImageLoader()
     
     var body: some View {
         
-        NavigationView {
-            ScrollView(.vertical) {
-                VStack {
-                    Image("Characters")
-                        .resizable()
-                        .frame(width: 200, height: 200)
-                        .clipShape(Circle())
-                        .overlay(Circle()
-                            .stroke(lineWidth: 5)
-                            .foregroundColor(.yellow)
-                            .frame(width: 200, height: 200))
+        ScrollView(.vertical) {
+            VStack {
+               
+                ZStack {
+                    AsyncImage(url: URL(string: imageLoader.getImageURL(character.url))) {
+                        $0.resizable()
+                            .frame(width: 200, height: 200)
+                            .clipShape(Circle())
+                    } placeholder: {
+                        Text("Loading..")
+                    }
                     
-                    Text(character.name)
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
+                    Circle()
+                        .stroke(lineWidth: 5)
                         .foregroundColor(.yellow)
-                    
-                    VStack {
                         
-                        SectionHeader(text: "Personal Info")
-                        
-                        InfoRows(textLeft: "Height", textRight: character.height)
-                        
-                        InfoRows(textLeft: "Mass", textRight: character.mass)
-                        
-                        InfoRows(textLeft: "BirthYear", textRight: character.birthYear)
-                        
-                        InfoRows(textLeft: "Gender", textRight: character.gender)
-                        
-                        InfoRows(textLeft: "Skin Color", textRight: character.skinColor)
-                        
-                        InfoRows(textLeft: "Eye Color", textRight: character.eyeColor)
-                        
-                        InfoRows(textLeft: "Hair Color", textRight: character.hairColor)
-                       
-                    }
-                    .padding()
-                    
-                    VStack {
-                        SectionHeader(text: "Homeworld")
-                    }
-                    .padding()
-                    
-                    VStack {
-                        SectionHeader(text: "Films")
-                    }
-                    .padding()
-                    
-                    VStack {
-                        SectionHeader(text: "Species")
-                    }
-                    .padding()
-                    
-                    VStack {
-                        SectionHeader(text: "Starships")
-                    }
-                    .padding()
-                    
-                    VStack {
-                        SectionHeader(text: "Vehicles")
-                    }
-                    .padding()
-                    
-                    Spacer()
                 }
-                .preferredColorScheme(.dark)
+                
+                Text(character.name)
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .foregroundColor(.yellow)
+                
+                VStack {
+                    
+                    SectionHeader(text: DetailsLocalizedStrings.swPersonalInfo)
+                    
+                    InfoRows(textLeft: "Height", textRight: character.height)
+                    
+                    InfoRows(textLeft: "Mass", textRight: character.mass)
+                    
+                    InfoRows(textLeft: "BirthYear", textRight: character.birthYear)
+                    
+                    InfoRows(textLeft: "Gender", textRight: character.gender)
+                    
+                    InfoRows(textLeft: "Skin Color", textRight: character.skinColor)
+                    
+                    InfoRows(textLeft: "Eye Color", textRight: character.eyeColor)
+                    
+                    InfoRows(textLeft: "Hair Color", textRight: character.hairColor)
+                   
+                }
+                .padding()
+                
+                VStack {
+                    SectionHeader(text: DetailsLocalizedStrings.swHomeworld)
+                }
+                .padding()
+                
+                VStack {
+                    SectionHeader(text: "Films")
+                }
+                .padding()
+                
+                VStack {
+                    SectionHeader(text: "Species")
+                }
+                .padding()
+                
+                VStack {
+                    SectionHeader(text: "Starships")
+                }
+                .padding()
+                
+                VStack {
+                    SectionHeader(text: "Vehicles")
+                }
+                .padding()
+                
+                Spacer()
             }
+            .preferredColorScheme(.dark)
         }
     }
 }

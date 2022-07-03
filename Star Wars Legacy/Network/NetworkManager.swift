@@ -21,6 +21,10 @@ class NetworkManager {
         return execute(url, dataType: Images.self)
     }
     
+    func fetechPlanets(_ url: String) -> AnyPublisher<Planets, Error> {
+        return execute(url, dataType: Planets.self)
+    }
+    
     private func execute<Element: Decodable>(_ url: String, dataType: Element.Type) -> AnyPublisher<Element, Error> {
         
         let components = URLComponents(string: url)!
@@ -32,6 +36,5 @@ class NetworkManager {
             .decode(type: dataType.self, decoder: JSONDecoder())
             .eraseToAnyPublisher()
     }
-    
     
 }

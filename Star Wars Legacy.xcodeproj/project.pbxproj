@@ -14,6 +14,10 @@
 		9F07F256282F81D200CEF46E /* Star_Wars_LegacyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F07F255282F81D200CEF46E /* Star_Wars_LegacyUITests.swift */; };
 		9F07F258282F81D200CEF46E /* Star_Wars_LegacyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F07F257282F81D200CEF46E /* Star_Wars_LegacyUITestsLaunchTests.swift */; };
 		9F07F267282F832F00CEF46E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F07F266282F832F00CEF46E /* NetworkManager.swift */; };
+		9F08F0712871630B005442DC /* PlanetsUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F08F0702871630B005442DC /* PlanetsUI.swift */; };
+		9F08F07328716316005442DC /* PlanetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F08F07228716316005442DC /* PlanetsViewController.swift */; };
+		9F08F07628716CA5005442DC /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F08F07528716CA5005442DC /* Strings.swift */; };
+		9F08F07828716DF3005442DC /* LocalizedStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F08F07728716DF3005442DC /* LocalizedStrings.swift */; };
 		9FB80B542830CE4900D2FEA5 /* StarWarsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB80B532830CE4900D2FEA5 /* StarWarsData.swift */; };
 		9FB80B582832085D00D2FEA5 /* HomeUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB80B572832085D00D2FEA5 /* HomeUI.swift */; };
 		9FB80B5A2832086900D2FEA5 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB80B592832086900D2FEA5 /* HomeViewModel.swift */; };
@@ -61,6 +65,10 @@
 		9F07F255282F81D200CEF46E /* Star_Wars_LegacyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Star_Wars_LegacyUITests.swift; sourceTree = "<group>"; };
 		9F07F257282F81D200CEF46E /* Star_Wars_LegacyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Star_Wars_LegacyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9F07F266282F832F00CEF46E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		9F08F0702871630B005442DC /* PlanetsUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlanetsUI.swift; path = "Star Wars Legacy/Modules/Helpers/PlanetsUI.swift"; sourceTree = SOURCE_ROOT; };
+		9F08F07228716316005442DC /* PlanetsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PlanetsViewController.swift; path = "Star Wars Legacy/Modules/Helpers/PlanetsViewController.swift"; sourceTree = SOURCE_ROOT; };
+		9F08F07528716CA5005442DC /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		9F08F07728716DF3005442DC /* LocalizedStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStrings.swift; sourceTree = "<group>"; };
 		9FB80B532830CE4900D2FEA5 /* StarWarsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsData.swift; sourceTree = "<group>"; };
 		9FB80B572832085D00D2FEA5 /* HomeUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUI.swift; sourceTree = "<group>"; };
 		9FB80B592832086900D2FEA5 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -182,6 +190,14 @@
 			path = Modules;
 			sourceTree = "<group>";
 		};
+		9F08F07428716C99005442DC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9F08F07528716CA5005442DC /* Strings.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		9FB80B522830CE3500D2FEA5 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +232,8 @@
 		E5253686286E0DD900D23179 /* Planets */ = {
 			isa = PBXGroup;
 			children = (
+				9F08F0702871630B005442DC /* PlanetsUI.swift */,
+				9F08F07228716316005442DC /* PlanetsViewController.swift */,
 			);
 			path = Planets;
 			sourceTree = "<group>";
@@ -240,8 +258,10 @@
 		E58EE0AF2837F5F0004BF803 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				9F08F07428716C99005442DC /* Extensions */,
 				9F07F23E282F81D200CEF46E /* Assets.xcassets */,
 				E58EE0B02837F625004BF803 /* StarWarsStrings.strings */,
+				9F08F07728716DF3005442DC /* LocalizedStrings.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -409,19 +429,23 @@
 				9F07F23B282F81CF00CEF46E /* Star_Wars_LegacyApp.swift in Sources */,
 				9FB80B542830CE4900D2FEA5 /* StarWarsData.swift in Sources */,
 				E5FB7E5D2866084B003AA4A4 /* DetailsViewModel.swift in Sources */,
+				9F08F07328716316005442DC /* PlanetsViewController.swift in Sources */,
 				E58EE0B628384036004BF803 /* CharactersViewModel.swift in Sources */,
 				9FB80B582832085D00D2FEA5 /* HomeUI.swift in Sources */,
 				E59926B4285BC542001608C7 /* DetailsUI.swift in Sources */,
 				9FB80B5A2832086900D2FEA5 /* HomeViewModel.swift in Sources */,
 				E5FB7E502864C69F003AA4A4 /* Characters.swift in Sources */,
+				9F08F0712871630B005442DC /* PlanetsUI.swift in Sources */,
 				E58EE0AE2836CE59004BF803 /* HomeCellUI.swift in Sources */,
 				E525367C286B76F500D23179 /* ImageLoader.swift in Sources */,
+				9F08F07628716CA5005442DC /* Strings.swift in Sources */,
 				E525367E286BB93000D23179 /* ImageCache.swift in Sources */,
 				9FD07DAA285AED7000BE3F05 /* LoaderViewUI.swift in Sources */,
 				E525368A286E2A7F00D23179 /* Images.swift in Sources */,
 				E538854828403F6B00BED136 /* CharactersUI.swift in Sources */,
 				E5FB7E592864DB18003AA4A4 /* String.swift in Sources */,
 				9F07F267282F832F00CEF46E /* NetworkManager.swift in Sources */,
+				9F08F07828716DF3005442DC /* LocalizedStrings.swift in Sources */,
 				E5253688286E0DE400D23179 /* Planets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
