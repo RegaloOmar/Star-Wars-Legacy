@@ -19,7 +19,7 @@ struct CharactersUI: View {
                 
                 NavigationLink(destination: DetailsUI(character: character)) {
 
-                    AsyncImage(url: URL(string: imageLoader.getImageURL(character.url))) {
+                    AsyncImage(url: URL(string: imageLoader.getImageURL(character.url, categorie: .characters))) {
                         $0.resizable()
                             .frame(width: 70, height: 70)
                             .clipShape(Circle())

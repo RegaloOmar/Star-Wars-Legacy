@@ -14,7 +14,7 @@ class ImageLoader: ObservableObject {
     @Published var image: UIImage?
     var cancellable: AnyCancellable?
     private var cache: ImageCache?
-    private var imageURL = "https://starwars-visualguide.com/assets/img/characters/%id.jpg"
+    private var imageURL = "https://starwars-visualguide.com/assets/img/%categorie/%id.jpg"
     private var cacheURL: String?
     private(set) var isLoading = false
     
@@ -26,10 +26,18 @@ class ImageLoader: ObservableObject {
         cancel()
     }
     
-    func getImageURL(_ str: String) -> String {
-        
+    func getImageURL(_ str: String, categorie: Categories) -> String {
         let id = str.suffix(3).replacingOccurrences(of: "/", with: "")
-        let newURL = imageURL.replacingOccurrences(of: "%id", with: id)
+        var newURL = imageURL.replacingOccurrences(of: "%id", with: id)
+        
+        switch categorie {
+        case .characters:
+            newURL = newURL.replacingOccurrences(of: "%categorie", with: "characters")
+        case .planets:
+            newURL = newURL.replacingOccurrences(of: "%categorie", with: "planets")
+        }
+        
+        
         self.cacheURL = newURL
         return newURL
     }
@@ -68,5 +76,9 @@ class ImageLoader: ObservableObject {
         image.map { cache?[URL(string: cacheURL ?? "")!] = $0}
     }
     
+    enum Categories {
+        case characters
+        case planets
+    }
     
 }

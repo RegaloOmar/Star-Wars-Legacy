@@ -6,9 +6,15 @@
 //
 
 import Foundation
+import Combine
 
 class DetailsViewModel: ObservableObject {
     
+    @Published var homeworld: Planets?
     
+    
+    func fetchHomeworld() {
+        
+    }
     
 }

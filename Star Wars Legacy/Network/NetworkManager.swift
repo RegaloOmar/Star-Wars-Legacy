@@ -21,7 +21,7 @@ class NetworkManager {
         return execute(url, dataType: Images.self)
     }
     
-    func fetechPlanets(_ url: String) -> AnyPublisher<Planets, Error> {
+    func fetchPlanets(_ url: String) -> AnyPublisher<Planets, Error> {
         return execute(url, dataType: Planets.self)
     }
     

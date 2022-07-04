@@ -18,7 +18,7 @@ struct DetailsUI: View {
             VStack {
                
                 ZStack {
-                    AsyncImage(url: URL(string: imageLoader.getImageURL(character.url))) {
+                    AsyncImage(url: URL(string: imageLoader.getImageURL(character.url, categorie: .characters))) {
                         $0.resizable()
                             .frame(width: 200, height: 200)
                             .clipShape(Circle())
@@ -41,45 +41,78 @@ struct DetailsUI: View {
                     
                     SectionHeader(text: DetailsLocalizedStrings.swPersonalInfo)
                     
-                    InfoRows(textLeft: "Height", textRight: character.height)
+                    InfoRows(textLeft: DetailsLocalizedStrings.swHeight,
+                             textRight: character.height)
                     
-                    InfoRows(textLeft: "Mass", textRight: character.mass)
+                    InfoRows(textLeft: DetailsLocalizedStrings.swMass,
+                             textRight: character.mass)
                     
-                    InfoRows(textLeft: "BirthYear", textRight: character.birthYear)
+                    InfoRows(textLeft: DetailsLocalizedStrings.swBirthYear,
+                             textRight: character.birthYear)
                     
-                    InfoRows(textLeft: "Gender", textRight: character.gender)
+                    InfoRows(textLeft: DetailsLocalizedStrings.swGender,
+                             textRight: character.gender)
                     
-                    InfoRows(textLeft: "Skin Color", textRight: character.skinColor)
+                    InfoRows(textLeft: DetailsLocalizedStrings.swSkinColor,
+                             textRight: character.skinColor)
                     
-                    InfoRows(textLeft: "Eye Color", textRight: character.eyeColor)
+                    InfoRows(textLeft: DetailsLocalizedStrings.swEyeColor,
+                             textRight: character.eyeColor)
                     
-                    InfoRows(textLeft: "Hair Color", textRight: character.hairColor)
+                    InfoRows(textLeft: DetailsLocalizedStrings.swHairColor,
+                             textRight: character.hairColor)
                    
                 }
                 .padding()
                 
                 VStack {
                     SectionHeader(text: DetailsLocalizedStrings.swHomeworld)
+                    ZStack(alignment: .bottom) {
+                        
+                        AsyncImage(url: URL(string: imageLoader.getImageURL(character.homeworld, categorie: .planets))){
+                            $0.resizable()
+                                .frame(minWidth: CGFloat.zero,
+                                       maxWidth: 200,
+                                       minHeight: 100,
+                                       maxHeight: 160)
+                            
+                            Text(DetailsLocalizedStrings.swHomeworld)
+                                .foregroundColor(.yellow)
+                                .font(.system(.title, design: .rounded))
+                                .fontWeight(.heavy)
+                                .frame(minWidth: CGFloat.zero, maxWidth: 200, minHeight: 30, maxHeight: 50)
+                                .background(Color.black
+                                )
+                        } placeholder: {
+                            Text("Loading...")
+                                .font(.system(.largeTitle))
+                                .bold()
+                        }
+                        
+                    }
+                    .cornerRadius(20)
+                    .overlay(RoundedRectangle(cornerRadius: 20)
+                        .stroke(Color.yellow, lineWidth: 3))
                 }
                 .padding()
                 
                 VStack {
-                    SectionHeader(text: "Films")
+                    SectionHeader(text: DetailsLocalizedStrings.swFilms)
                 }
                 .padding()
                 
                 VStack {
-                    SectionHeader(text: "Species")
+                    SectionHeader(text: DetailsLocalizedStrings.swSpecies)
                 }
                 .padding()
                 
                 VStack {
-                    SectionHeader(text: "Starships")
+                    SectionHeader(text: DetailsLocalizedStrings.swStarships)
                 }
                 .padding()
                 
                 VStack {
-                    SectionHeader(text: "Vehicles")
+                    SectionHeader(text: DetailsLocalizedStrings.swVehicules)
                 }
                 .padding()
                 
@@ -131,7 +164,7 @@ struct DetailsUI_Previews: PreviewProvider {
     var data: Character
     static var previews: some View {
         DetailsUI(character: Character(
-            name: "Grogu",
+            name: "Luke",
             height: "172",
             mass: "77",
             hairColor: "blond",
@@ -139,7 +172,7 @@ struct DetailsUI_Previews: PreviewProvider {
             eyeColor: "blue",
             birthYear: "19BBY",
             gender: "male",
-            homeworld: "https://swapi.py4e.com/api/planets/1/",
+            homeworld: "https://swapi.py4e.com/api/planets/2/",
             films: [
             "https://swapi.py4e.com/api/films/2/",
             "https://swapi.py4e.com/api/films/6/",

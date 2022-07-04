@@ -16,3 +16,14 @@
 "SW_Vehicles" = "Vehicles";
 "SW_Personal_Info" = "Personal Info";
 "SW_Homeworld" = "Homeworld";
+"SW_Films" = "Films";
+"SW_Species" = "Species";
+"SW_Starships" = "Starships";
+"SW_Vehicles" = "Vehicles";
+"SW_Height" = "Height";
+"SW_Mass" = "Mass";
+"SW_BirthYear" = "BirthYear";
+"SW_Gender" = "Gender";
+"SW_SkinColor" = "Skin Color";
+"SW_EyeColor" = "Eye Color";
+"SW_HairColor" = "Hair Color";
