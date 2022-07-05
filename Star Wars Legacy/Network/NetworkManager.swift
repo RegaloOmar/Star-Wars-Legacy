@@ -32,6 +32,7 @@ class NetworkManager {
         let request = URLRequest(url: components.url!)
         
         return URLSession.shared.dataTaskPublisher(for: request)
+            .subscribe(on: DispatchQueue.global(qos: .userInteractive))
             .map(\.data)
             .decode(type: dataType.self, decoder: JSONDecoder())
             .eraseToAnyPublisher()

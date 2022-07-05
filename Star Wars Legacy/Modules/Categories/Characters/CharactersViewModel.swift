@@ -17,7 +17,7 @@ class CharactersViewModel: ObservableObject {
     private var cancellable: AnyCancellable?
     
     
-    func fetchCharacters(_ url: String = "https://swapi.dev/api/people/?page=1") {
+    func fetchCharacters(_ url: String = DetailsLocalizedStrings.swCharactersPage) {
         
         cancellable = NetworkManager.shared.fetchCharacters(url)
             .receive(on: DispatchQueue.main)
