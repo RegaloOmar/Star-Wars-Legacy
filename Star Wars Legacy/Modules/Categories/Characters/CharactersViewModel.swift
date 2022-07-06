@@ -13,7 +13,6 @@ class CharactersViewModel: ObservableObject {
     @Published var isRequestFailed = false
     @Published var characterList: [Character] = []
     var nextPage: String?
-    var previousPage: String?
     private var cancellable: AnyCancellable?
     
     
@@ -30,10 +29,14 @@ class CharactersViewModel: ObservableObject {
                     print("finished")
                 }
             }, receiveValue: { [weak self] galaxyList in
-                self?.characterList = galaxyList.results
+                self?.characterList.append(contentsOf: galaxyList.results)
                 self?.nextPage = galaxyList.next
-                self?.previousPage = galaxyList.previous
             })
     }
     
+    func getNextPage() {
+        if let nextPage = self.nextPage {
+            fetchCharacters(nextPage)
+        }
+    }
 }

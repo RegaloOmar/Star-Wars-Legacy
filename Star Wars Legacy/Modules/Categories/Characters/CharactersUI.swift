@@ -19,25 +19,32 @@ struct CharactersUI: View {
                 
                 NavigationLink(destination: DetailsUI(character: character)) {
 
-                    AsyncImage(url: URL(string: imageLoader.getImageURL(character.url, categorie: .characters))) {
-                        $0.resizable()
-                            .frame(width: 70, height: 70)
-                            .clipShape(Circle())
-                    } placeholder: {
-                        Text("Loading..")
+                    HStack {
+                        AsyncImage(url: URL(string: imageLoader.getImageURL(character.url, categorie: .characters))) {
+                            $0.resizable()
+                                .frame(width: 70, height: 70)
+                                .clipShape(Circle())
+                        } placeholder: {
+                            Text("Loading..")
+                        }
+                        Text(character.name)
+                            .foregroundColor(.yellow)
+                            .fontWeight(.bold)
+                            .font(.system(.title, design: .rounded))
+                            .frame(minWidth: 100,
+                                   maxWidth: .infinity,
+                                   minHeight: 100,
+                               maxHeight: 100)
                     }
-
-                    Text(character.name)
-                        .foregroundColor(.yellow)
-                        .fontWeight(.bold)
-                        .font(.system(.title, design: .rounded))
-                        .frame(minWidth: 100,
-                               maxWidth: .infinity,
-                               minHeight: 100,
-                           maxHeight: 100)
+                    .onAppear {
+                        if character == self.viewModel.characterList.last {
+                            viewModel.getNextPage()
+                        }
+                    }
                 }
             }
         }
+        .frame(width: .infinity, height: .infinity, alignment: .center)
         .onAppear {
             viewModel.fetchCharacters()
         }
