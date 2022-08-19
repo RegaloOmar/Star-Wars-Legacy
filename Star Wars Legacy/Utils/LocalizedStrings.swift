@@ -25,3 +25,7 @@ struct DetailsLocalizedStrings {
     static let swHairColor = "SW_HairColor".transferLocalizedString()
     static let swCharactersPage = "https://swapi.dev/api/people/?page=1"
 }
+
+struct UtilsStrings {
+    static let swPlaceholder = "big-placeholder"
+}

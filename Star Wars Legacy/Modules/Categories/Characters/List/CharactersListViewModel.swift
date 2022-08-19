@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class CharactersViewModel: ObservableObject {
+class CharactersListViewModel: ObservableObject {
     
     @Published var isRequestFailed = false
     @Published var characterList: [Character] = []
@@ -29,6 +29,7 @@ class CharactersViewModel: ObservableObject {
                     print("finished")
                 }
             }, receiveValue: { [weak self] galaxyList in
+                
                 self?.characterList.append(contentsOf: galaxyList.results)
                 self?.nextPage = galaxyList.next
             })

@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct CharactersUI: View {
+struct CharactersListUI: View {
     
-    @StateObject private var viewModel = CharactersViewModel()
+    @StateObject private var viewModel = CharactersListViewModel()
     @StateObject private var imageLoader = ImageLoader()
     
     var body: some View {
@@ -44,7 +44,6 @@ struct CharactersUI: View {
                 }
             }
         }
-        .frame(width: .infinity, height: .infinity, alignment: .center)
         .onAppear {
             viewModel.fetchCharacters()
         }
@@ -55,6 +54,6 @@ struct CharactersUI: View {
 
 struct CharactersUI_Previews: PreviewProvider {
     static var previews: some View {
-        CharactersUI()
+        CharactersListUI()
     }
 }

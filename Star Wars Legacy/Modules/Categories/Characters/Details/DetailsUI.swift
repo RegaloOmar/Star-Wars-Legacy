@@ -11,7 +11,7 @@ struct DetailsUI: View {
     
     var character: Character
     @StateObject private var imageLoader = ImageLoader()
-    
+    @StateObject private var viewModel = DetailsViewModel()
     var body: some View {
         
         ScrollView(.vertical) {
@@ -23,7 +23,8 @@ struct DetailsUI: View {
                             .frame(width: 200, height: 200)
                             .clipShape(Circle())
                     } placeholder: {
-                        Text("Loading..")
+                        PlacerHolderUI()
+                        .clipShape(Circle())
                     }
                     
                     Circle()
@@ -66,6 +67,7 @@ struct DetailsUI: View {
                 .padding()
                 
                 VStack {
+                    
                     SectionHeader(text: DetailsLocalizedStrings.swHomeworld)
                     ZStack(alignment: .bottom) {
                         
@@ -75,8 +77,9 @@ struct DetailsUI: View {
                                        maxWidth: 200,
                                        minHeight: 100,
                                        maxHeight: 160)
+                                
                             
-                            Text(DetailsLocalizedStrings.swHomeworld)
+                            Text(viewModel.homeworld?.name ?? DetailsLocalizedStrings.swHomeworld)
                                 .foregroundColor(.yellow)
                                 .font(.system(.title, design: .rounded))
                                 .fontWeight(.heavy)
@@ -84,15 +87,26 @@ struct DetailsUI: View {
                                 .background(Color.black
                                 )
                         } placeholder: {
-                            Text("Loading...")
-                                .font(.system(.largeTitle))
-                                .bold()
+                            ZStack(alignment: .bottom) {
+                                PlacerHolderUI()
+                                
+                                Text(viewModel.homeworld?.name ?? DetailsLocalizedStrings.swHomeworld)
+                                    .foregroundColor(.yellow)
+                                    .font(.system(.title, design: .rounded))
+                                    .fontWeight(.heavy)
+                                    .frame(minWidth: CGFloat.zero, maxWidth: 200, minHeight: 30, maxHeight: 50)
+                                    .background(Color.black)
+                            }
+                            
+                            
                         }
-                        
                     }
                     .cornerRadius(20)
                     .overlay(RoundedRectangle(cornerRadius: 20)
-                        .stroke(Color.yellow, lineWidth: 3))
+                    .stroke(Color.yellow, lineWidth: 3))
+                    .onAppear {
+                        viewModel.fetchHomeworld(url: character.homeworld)
+                    }
                 }
                 .padding()
                 
@@ -172,13 +186,14 @@ struct DetailsUI_Previews: PreviewProvider {
             eyeColor: "blue",
             birthYear: "19BBY",
             gender: "male",
-            homeworld: "https://swapi.py4e.com/api/planets/2/",
+            homeworld: "https://swapi.py4e.com/api/planets/1/",
             films: [
             "https://swapi.py4e.com/api/films/2/",
             "https://swapi.py4e.com/api/films/6/",
             "https://swapi.py4e.com/api/films/3/",
             "https://swapi.py4e.com/api/films/1/",
-            "https://swapi.py4e.com/api/films/7/"],
+            "https://swapi.py4e.com/api/films/7/"
+            ],
             species: ["https://swapi.py4e.com/api/species/1/"],
             starships: [
                 "https://swapi.py4e.com/api/starships/12/",

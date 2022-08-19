@@ -7,7 +7,14 @@
 
 import Foundation
 
-struct Planets: Decodable, Identifiable, Hashable {
+struct Planets: Decodable {
+    var count:  Int
+    var next: String?
+    var previous: String?
+    var results: [Planet]
+}
+
+struct Planet: Decodable, Identifiable, Hashable {
     
     var id = UUID()
     var name: String
